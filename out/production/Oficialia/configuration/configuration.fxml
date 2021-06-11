@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="configuration.CfgController">
+    <top>
+        <HBox fx:id="hboxtop" alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="900.0" spacing="150.0">
+            <Label fx:id="lblEncabezado" text="Configuración de la aplicación" />
+            
+            <Button fx:id="btnContinue">
+                <graphic>
+                    <FontAwesomeIconView fill="#64d8cb" glyphName="ARROW_CIRCLE_RIGHT" glyphSize="35" textAlignment="CENTER" wrappingWidth="18.285714149475098" />
+                </graphic>
+                <HBox.margin>
+                    <Insets left="210.0" />
+                </HBox.margin>
+            </Button>
+            <HBox.margin>
+                <Insets left="5" />
+            </HBox.margin>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="tblOficial" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500" prefWidth="400">
+            <columns>
+                <TableColumn fx:id="col1" prefWidth="150" text="Dirección" />
+                <TableColumn fx:id="col2" prefWidth="250.0" text="Nombre del jefe" />
+            </columns>
+            <BorderPane.margin>
+                <Insets right="10.0" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+    <left>
+        <VBox spacing="15">
+            <GridPane hgap="8" vgap="20">
+                <padding>
+                    <Insets topRightBottomLeft="15" />
+                </padding>
+                <Label text="Estado" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <JFXComboBox fx:id="cmbState" prefHeight="25.0" prefWidth="292.0" promptText="Estados" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Municipio" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <JFXComboBox fx:id="cmbMunicipality" prefHeight="25.0" prefWidth="292.0" promptText="Municipios" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Dirección" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <JFXTextField fx:id="txtAdress" prefHeight="25.0" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Teléfono" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <JFXTextField fx:id="txtPhone" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="Jefe de la Oficialia" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <JFXTextField fx:id="txtBoss" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="Horario" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <JFXTextField fx:id="txtSchedule" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <VBox.margin>
+                    <Insets top="25" />
+                </VBox.margin>
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+
+            </GridPane>
+            <ImageView fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../images/configuracion.png" />
+                </image>
+                <VBox.margin>
+                    <Insets left="150.0" right="15.0" />
+                </VBox.margin>
+
+            </ImageView>
+            <VBox.margin>
+                <Insets left="15" />
+            </VBox.margin>
+        </VBox>
+    </left>
+    <padding>
+        <Insets top="8.0" />
+    </padding>
+</BorderPane>

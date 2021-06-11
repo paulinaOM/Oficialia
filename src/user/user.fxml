@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<BorderPane prefHeight="600" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="user.UserController">
+    <top>
+        <HBox fx:id="hboxtop" alignment="CENTER_LEFT">
+            <Label fx:id="lblEncabezado" text="Usuarios" />
+            <HBox spacing="5">
+                <Button fx:id="btnNew">
+                    <graphic>
+                        <FontAwesomeIconView fill="#64d8cb" glyphName="PLUS_SQUARE" glyphSize="35" textAlignment="CENTER" wrappingWidth="18.285714149475098" />
+                    </graphic>
+                    <HBox.margin>
+                        <Insets left="115.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="btnSave">
+                    <graphic>
+                        <FontAwesomeIconView fill="#64d8cb" glyphName="SAVE" glyphSize="35" textAlignment="CENTER" wrappingWidth="18.285714149475098" />
+                    </graphic>
+                </Button>
+                <Button fx:id="btnDelete">
+                    <graphic>
+                        <FontAwesomeIconView fill="#64d8cb" glyphName="MINUS_SQUARE" glyphSize="35" textAlignment="CENTER" wrappingWidth="18.285714149475098" />
+                    </graphic>
+                </Button>
+                <Button fx:id="btnClean">
+                    <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0">
+                            <image>
+                                <Image url="@../images/clean.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <HBox.margin>
+                    <Insets top="5" />
+                </HBox.margin>
+            </HBox>
+            <Button fx:id="btnBack">
+                <graphic>
+                    <FontAwesomeIconView fill="#64d8cb" glyphName="UNDO" glyphSize="35" textAlignment="CENTER" wrappingWidth="18.285714149475098" />
+                </graphic>
+                <HBox.margin>
+                    <Insets left="430.0" />
+                </HBox.margin>
+            </Button>
+            <HBox.margin>
+                <Insets left="5" />
+            </HBox.margin>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="tblUser" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500" prefWidth="500">
+            <columns>
+                <TableColumn fx:id="col1" prefWidth="100" text="ID" />
+                <TableColumn fx:id="col2" prefWidth="200.0" text="Username" />
+                <TableColumn fx:id="col3" prefWidth="200.0" text="Rol" />
+            </columns>
+            <BorderPane.margin>
+                <Insets right="10.0" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+    <left>
+        <VBox alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" fx:id="img">
+                <image>
+                    <Image url="@../images/user.png" />
+                </image>
+                <VBox.margin>
+                    <Insets left="15.0" right="15.0" top="30.0" />
+                </VBox.margin>
+            </ImageView>
+            <GridPane hgap="8" vgap="20">
+                <padding>
+                    <Insets topRightBottomLeft="15" />
+                </padding>
+                <Label text="Id" GridPane.columnIndex="0" GridPane.rowIndex="0" fx:id="lblId"/>
+                <JFXTextField fx:id="txtId" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Username" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <JFXTextField fx:id="txtUserName" prefHeight="25.0" prefWidth="292.0" GridPane.columnIndex="1" GridPane.rowIndex="1" onKeyTyped="#keyTyped"/>
+                <Label text="Password" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <JFXPasswordField fx:id="txtPassword" prefHeight="25.0" prefWidth="292.0" />
+                    <Button fx:id="btnPassword" text="Modificar"></Button>
+                </HBox>
+
+                <Label text="Rol" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <JFXComboBox fx:id="cmbRol" prefHeight="25.0" prefWidth="292.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <VBox.margin>
+                    <Insets top="25" />
+                </VBox.margin>
+
+            </GridPane>
+            <VBox.margin>
+                <Insets left="15" />
+            </VBox.margin>
+            <BorderPane.margin>
+                <Insets top="40.0" />
+            </BorderPane.margin>
+        </VBox>
+    </left>
+    <padding>
+        <Insets top="8.0" />
+    </padding>
+</BorderPane>

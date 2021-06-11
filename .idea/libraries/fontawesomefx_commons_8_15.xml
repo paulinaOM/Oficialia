@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="fontawesomefx-commons-8.15">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/fontawesone/fontawesomefx-commons-8.15.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/fontawesone/fontawesomefx-controls-8.15.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/fontawesone/fontawesomefx-emojione-2.2.7-2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/fontawesone/fontawesomefx-fontawesome-4.7.0-5.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/fontawesone/fontawesomefx-icons525-3.0.0-4.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/fontawesone/fontawesomefx-materialdesignfont-1.7.22-4.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/fontawesone/fontawesomefx-materialicons-2.2.0-5.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/fontawesone/fontawesomefx-materialstackicons-2.1-5.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/fontawesone/fontawesomefx-octicons-4.3.0-5.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/fontawesone/fontawesomefx-weathericons-2.0.10-5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

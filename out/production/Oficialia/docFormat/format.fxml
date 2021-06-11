@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="docFormat.forController">
+    <top>
+        <HBox fx:id="hboxtop" alignment="CENTER_LEFT"  BorderPane.alignment="CENTER">
+            <Label fx:id="lblEncabezado" alignment="CENTER" text="Formato Documento" textOverrun="CLIP" BorderPane.alignment="CENTER_LEFT">
+
+            </Label>
+            <HBox alignment="CENTER" spacing="10">
+                <Button fx:id="btnCancel" styleClass="btn,btn-lg,btn-primary">
+                    <graphic>
+                        <FontAwesomeIconView fill="#64d8cb" glyphName="PLUS_SQUARE" glyphSize="35" textAlignment="CENTER" wrappingWidth="18.285714149475098" />
+                    </graphic>
+                    <HBox.margin>
+                        <Insets left="30.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="btnAdd">
+                    <graphic>
+                        <FontAwesomeIconView fill="#64d8cb" glyphName="SAVE" glyphSize="35" textAlignment="CENTER" wrappingWidth="18.285714149475098" />
+                    </graphic>
+                </Button>
+                <Button fx:id="btnDelete" styleClass="btn,btn-lg,btn-primary">
+                    <graphic>
+                        <FontAwesomeIconView fill="#64d8cb" glyphName="MINUS_SQUARE" glyphSize="35" textAlignment="CENTER" wrappingWidth="18.285714149475098" />
+                    </graphic>
+                </Button>
+                <Button fx:id="btnReturn" styleClass="btn,btn-lg,btn-primary">
+                    <graphic>
+                        <FontAwesomeIconView fill="#64d8cb" glyphName="UNDO" glyphSize="35" textAlignment="CENTER" wrappingWidth="18.285714149475098" />
+                    </graphic>
+               <HBox.margin>
+                  <Insets left="350.0" />
+               </HBox.margin>
+                </Button>
+            </HBox>
+        </HBox>
+    </top>
+    <center>
+        <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="450" spacing="10">
+            <VBox alignment="CENTER" spacing="10">
+                <GridPane hgap="5" prefHeight="150" prefWidth="400" vgap="20" BorderPane.alignment="CENTER">
+                    <Label prefHeight="17.0" prefWidth="120.0" text="Clave Formato" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <JFXTextField fx:id="txtFormatKey" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Label text="Descripción" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <JFXTextField fx:id="txtDescription" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <columnConstraints>
+                        <ColumnConstraints maxWidth="121.0" minWidth="105.0" prefWidth="121.0" />
+                        <ColumnConstraints maxWidth="245.0" minWidth="229.0" prefWidth="229.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+                <ImageView fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="/images/formato.png" />
+                    </image>
+                </ImageView>
+            <HBox.margin>
+               <Insets left="10.0" top="10.0" />
+            </HBox.margin>
+            </VBox>
+            <TableView fx:id="tblFormat" prefHeight="400" prefWidth="400">
+                <columns>
+                    <TableColumn fx:id="col1" prefWidth="150" text="Clave Formato" />
+                    <TableColumn fx:id="col2" prefWidth="250" text="Descripción" />
+                </columns>
+            <HBox.margin>
+               <Insets bottom="5.0" right="5.0" />
+            </HBox.margin>
+            </TableView>
+        </HBox>
+
+    </center>
+</BorderPane>

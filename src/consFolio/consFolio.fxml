@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #d3d3d3" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="consFolio.FolioController">
+    <top>
+        <VBox>
+            <HBox fx:id="hboxtop" alignment="CENTER_LEFT" spacing="650.0">
+                <Label fx:id="lblEncabezado" text="Consulta por Folio" />
+                <Button fx:id="btnBack">
+                    <graphic>
+                        <FontAwesomeIconView fill="#64d8cb" glyphName="UNDO" glyphSize="35" textAlignment="CENTER" />
+                    </graphic>
+                </Button>
+            </HBox>
+            <HBox spacing="20">
+                <VBox spacing="10">
+                    <Label text="Ingrese folio del documento:">
+                        <HBox.margin>
+                            <Insets top="60.0" />
+                        </HBox.margin>
+                    </Label>
+                    <JFXTextField fx:id="txtSearchFolio" prefHeight="25.0" prefWidth="188.0">
+                        <HBox.margin>
+                            <Insets top="60.0" />
+                        </HBox.margin></JFXTextField>
+                    <HBox prefHeight="43.0" prefWidth="373.0" spacing="8.0">
+                        <Button fx:id="btnSearch">
+                            <graphic>
+                                <FontAwesomeIconView fill="#00766c" glyphName="SEARCH" glyphSize="35" textAlignment="CENTER" />
+                            </graphic>
+                     <HBox.margin>
+                        <Insets left="260.0" />
+                     </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnClean">
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="35.0">
+                                    <image>
+                                        <Image url="@../images/clean.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <HBox.margin>
+                            <Insets top="10.0" />
+                        </HBox.margin>
+
+                    </HBox>
+
+                </VBox>
+
+                <TableView fx:id="tblDocuments" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="150" prefWidth="597.0">
+                    <columns>
+                        <TableColumn fx:id="col1" prefWidth="85.0" text="No. Folio" />
+                        <TableColumn fx:id="col2" prefWidth="120.0" text="No. Documento" />
+                        <TableColumn fx:id="col3" prefWidth="216.0" text="Nombre" />
+                    </columns>
+                    <BorderPane.margin>
+                        <Insets right="10.0" />
+                    </BorderPane.margin>
+                    <HBox.margin>
+                        <Insets right="10.0" />
+                    </HBox.margin>
+                </TableView>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <HBox spacing="10.0">
+            <Pane prefHeight="300.0" prefWidth="321.0" style="-fx-background-color: #eeeeee">
+                <VBox prefWidth="300" spacing="20">
+                    <Label text="Información del Documento">
+                        <VBox.margin>
+                            <Insets left="10.0" top="20.0" />
+                        </VBox.margin></Label>
+                    <GridPane hgap="5" vgap="20" BorderPane.alignment="BOTTOM_CENTER">
+                        <padding>
+                            <Insets topRightBottomLeft="7" />
+                        </padding>
+                        <Label text="No. Folio" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <JFXTextField fx:id="txtFolio" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label text="No. Documento" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="txtNumDocument" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Nombre Documento" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="txtDocName" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Fecha del Documento" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="txtDateDocument" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Fecha de recepción" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="txtDateReception" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Formato" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="txtFormat" editable="false" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="Tipo" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                        <JFXTextField fx:id="txtType" editable="false" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        </columnConstraints>
+                    <rowConstraints>
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                    </rowConstraints>
+                    </GridPane>
+                </VBox>
+            </Pane>
+            <Pane prefHeight="300.0" prefWidth="321.0" style="-fx-background-color: #eeeeee">
+                <VBox maxWidth="-Infinity" prefWidth="300.0" spacing="20" BorderPane.alignment="CENTER">
+                    <Label text="Información de Procedencia">
+                        <VBox.margin>
+                            <Insets left="10.0" top="20.0" />
+                        </VBox.margin></Label>
+                    <GridPane hgap="5" vgap="20" BorderPane.alignment="BOTTOM_CENTER">
+                        <padding>
+                            <Insets topRightBottomLeft="7" />
+                        </padding>
+                        <Label text="Institución" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <JFXTextField fx:id="txtInstituteOrigin" editable="false" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label text="Remitente" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="txtSender" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Puesto" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="txtPosition" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Destinatario" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="txtAdressee" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Asunto" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="txtAffair" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Observaciones" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="txtObservations" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                    <rowConstraints>
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                    </rowConstraints>
+
+                    </GridPane>
+                </VBox>
+            </Pane>
+            <Pane prefHeight="300.0" prefWidth="321.0" style="-fx-background-color: #eeeeee">
+                <VBox prefWidth="300.0" spacing="20" BorderPane.alignment="CENTER">
+                    <Label text="Información del Destinatario">
+                        <VBox.margin>
+                            <Insets left="10.0" top="20.0" />
+                        </VBox.margin></Label>
+                    <GridPane hgap="5" maxWidth="-Infinity" prefHeight="758.0" prefWidth="400.0" vgap="20" BorderPane.alignment="BOTTOM_CENTER">
+                        <padding>
+                            <Insets topRightBottomLeft="7" />
+                        </padding>
+                        <Label text="Área de Ayuntamiento" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <JFXTextField fx:id="txtTownHall" editable="false" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label text="Instrucción" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="txtInstruction" editable="false" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Prioridad" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="txtPriority" editable="false" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Fecha Limite" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="txtDateLimit" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Entregado" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <Label text="Fecha Entregado" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <JFXTextField fx:id="txtDateDelivery" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="Recibido por" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                        <JFXTextField fx:id="txtRecive" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    <JFXTextField fx:id="txtStatus" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        </columnConstraints>
+                    <rowConstraints>
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                       <RowConstraints />
+                    </rowConstraints>
+                    </GridPane>
+                </VBox>
+            </Pane>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+        </HBox>
+    </center>
+
+</BorderPane>
